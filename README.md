@@ -9,8 +9,6 @@
 
 **How do I export my data from Crayon?** Crayon documents no bulk export of battlecards in its public materials (checked October 2026). The official way out is Crayon's MCP server. calven-migrate-from-crayon is a free, open-source command-line tool that signs in with your own Crayon account, asks Crayon a fixed set of questions about every competitor (battlecard, objection handling, proof points, win/loss stories, profile) and saves each answer verbatim, with Crayon's citations, as Markdown and JSON files on your own machine. It sends nothing to Calven. The files work in any tool that takes uploads.
 
-> This is an independent open-source project by Calven AI, LLC. It is not affiliated with, endorsed by or sponsored by Crayon, Inc. Crayon is a trademark of Crayon, Inc., used here only to identify the service this tool works with. The tool runs on your machine, signs in with your own Crayon account through Crayon's official MCP server (and, if you choose, Crayon's Insights API with your own key), and writes files only to your computer. Nothing is sent to Calven. Use it in line with your agreement with Crayon: answers from Crayon's AI tools are Outputs you may use for internal business purposes, and material Crayon collected from third parties (for example news and reviews) is licensed to you, not owned by you. Provided under the MIT License, without warranty; check the export against your Crayon workspace before relying on it.
-
 ## How do I export my battlecards from Crayon?
 
 You need Node.js 20 or later and a Crayon login. Run:
@@ -136,3 +134,7 @@ Tested end to end against a simulated Crayon server across answer shapes, tool n
 ## License
 
 [MIT](LICENSE). Report security issues as described in [SECURITY.md](SECURITY.md).
+
+## Disclaimer
+
+This is an independent open-source project by Calven AI, LLC. It is not affiliated with, endorsed by or sponsored by Crayon, Inc. Crayon is a trademark of Crayon, Inc., used here only to identify the service this tool works with. The tool runs on your machine, signs in with your own Crayon account through Crayon's official MCP server (and, if you choose, Crayon's Insights API with your own key), and writes files only to your computer. Nothing is sent to Calven. Use it in line with your agreement with Crayon: answers from Crayon's AI tools are Outputs you may use for internal business purposes, and material Crayon collected from third parties (for example news and reviews) is licensed to you, not owned by you. Provided under the MIT License, without warranty; check the export against your Crayon workspace before relying on it.
