@@ -9,6 +9,20 @@
 
 **How do I export my data from Crayon?** Crayon documents no bulk export of battlecards in its public materials (checked October 2026). The official way out is Crayon's MCP server. calven-migrate-from-crayon is a free, open-source command-line tool that signs in with your own Crayon account, asks Crayon a fixed set of questions about every competitor (battlecard, objection handling, proof points, win/loss stories, profile) and saves each answer verbatim, with Crayon's citations, as Markdown and JSON files on your own machine. It sends nothing to Calven. The files work in any tool that takes uploads.
 
+## Not technical? Let Claude do it
+
+You don't need a terminal. Open [Claude](https://claude.ai), start a new chat and paste:
+
+```text
+I want to migrate my battlecards and competitive intel out of Crayon into a
+folder on my laptop. Follow the guide at
+https://github.com/calven-ai/calven-migrate-from-crayon/blob/main/MIGRATION.md
+I'm not technical, so explain each step in plain language and tell me
+exactly what to click.
+```
+
+Claude picks the way that works for your setup, walks you through the Crayon sign-in and leaves you with a `crayon-export-<date>` folder holding Crayon's answers about every competitor, with citations, and a coverage report. The steps Claude follows are in [MIGRATION.md](MIGRATION.md).
+
 ## How do I export my battlecards from Crayon?
 
 You need Node.js 20 or later and a Crayon login. Run:
@@ -101,11 +115,21 @@ The files are plain Markdown and JSON, so any tool that takes uploads can import
 
 ## Can Claude run the export for me?
 
-Yes. The [migrate-from-crayon skill](skills/migrate-from-crayon/SKILL.md) has Claude Code run this command. It runs the command rather than asking Crayon through a chat, so answers are saved verbatim and large workspaces do not hit context limits. If you then work with the files in an AI tool, use one that does not train on your inputs, such as Claude Team, Enterprise or the API.
+Yes, in three ways. [MIGRATION.md](MIGRATION.md) tells Claude which to use:
+
+| Where you use Claude | How the export runs |
+| --- | --- |
+| Claude Code, or the Code tab of the Claude desktop app | Claude runs this command on your computer and the folder appears there |
+| Cowork in the Claude desktop app, with the Crayon connector | Claude asks the same questions through Crayon's MCP server and writes the folder straight into a folder you share |
+| claude.ai or the desktop chat, with the Crayon connector | Claude asks the same questions through Crayon's MCP server, builds the same folder and gives you a zip to download |
+
+The [migrate-from-crayon skill](skills/migrate-from-crayon/SKILL.md) packages the same steps for Claude Code. Running the command is preferred where Claude can: it keeps every raw reply, writes the coverage report, and large workspaces don't hit chat limits. On the connector path, Claude saves Crayon's replies as they arrive and builds the files from them with code rather than rewriting answers by hand. Either way the export is partial: Crayon's answers, not the raw cards. If you work with the files in an AI tool, use one that does not train on your inputs, such as Claude Team, Enterprise or the API.
 
 ## FAQ
 
 **Is it free?** Yes. It is MIT-licensed and you need no Calven account.
+
+**Do I need to be technical?** No. Paste the prompt from [Not technical? Let Claude do it](#not-technical-let-claude-do-it) into Claude and it guides you.
 
 **Does Calven see my data?** No. The tool talks only to Crayon and writes only to your computer.
 

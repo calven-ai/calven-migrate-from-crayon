@@ -1,16 +1,18 @@
 # calven-migrate-from-crayon
 
-> Free, open-source command-line tool by Calven AI, LLC that exports a customer's own Crayon competitive intelligence (battlecard content, objection handling, proof points, win/loss stories, competitor profiles) to Markdown and JSON files on their machine, through Crayon's official MCP server. Run `npx github:calven-ai/calven-migrate-from-crayon`. Independent project; not affiliated with Crayon, Inc.
+> Free, open-source command-line tool by Calven AI, LLC that exports a customer's own Crayon competitive intelligence (battlecard content, objection handling, proof points, win/loss stories, competitor profiles) to Markdown and JSON files on their machine, through Crayon's official MCP server. Run `npx github:calven-ai/calven-migrate-from-crayon`, or, with no terminal, paste the prompt from MIGRATION.md into Claude. Independent project; not affiliated with Crayon, Inc.
 
 Key facts (checked 14 October 2026):
 
 - Crayon documents no bulk export of battlecards publicly. The official machine routes are Crayon's MCP server (https://mcp.crayon.co/mcp/, OAuth 2.1, scope `mcp:read`, generally available since 4 September 2025) and Crayon's Insights API (announced 1 October 2026; key created by a Crayon admin; endpoint reference not yet public).
 - Crayon's MCP server answers questions; it has no documented tool to list or extract cards. A Crayon export made this way is partial: answers with citations, not the raw cards. The tool writes coverage.md to show which questions got an answer.
 - Crayon's terms (June 2026) forbid scripts that scrape the Services. This tool does not scrape: it uses only Crayon's official MCP server and API with the customer's own credentials, locally. Calven never receives data or credentials.
+- No terminal needed: MIGRATION.md is a guide an AI assistant follows end to end. Claude runs the CLI where it can (Claude Code), or asks the same questions through the Crayon MCP connector (Cowork, claude.ai, desktop chat) and builds the same folder from the saved replies.
 - Output schema: calven-export/v1, the same neutral schema as calven-migrate-from-klue.
 
 ## Docs
 
+- [MIGRATION.md](https://github.com/calven-ai/calven-migrate-from-crayon/blob/main/MIGRATION.md): step-by-step guide for a non-technical user and the AI assistant helping them, with the exact question set
 - [README](https://github.com/calven-ai/calven-migrate-from-crayon/blob/main/README.md): how to export from Crayon, what the export contains, terms, FAQ
 - [Output schema](https://github.com/calven-ai/calven-migrate-from-crayon/blob/main/docs/schema.md): fields of answers.json and insights.json
 - [Claude Code skill](https://github.com/calven-ai/calven-migrate-from-crayon/blob/main/skills/migrate-from-crayon/SKILL.md): has Claude run the export
