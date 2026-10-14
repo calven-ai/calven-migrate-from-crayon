@@ -1,0 +1,40 @@
+{
+  "name": "calven-migrate-from-crayon",
+  "version": "0.1.0",
+  "description": "Migrate from Crayon: export your Crayon battlecard content, objection handling, proof points, win/loss stories and competitor profiles to Markdown and JSON files on your own machine, through Crayon's official MCP server.",
+  "license": "MIT",
+  "author": "Calven AI, LLC",
+  "type": "module",
+  "bin": {
+    "calven-migrate-from-crayon": "bin/calven-migrate-from-crayon.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "skills",
+    "docs",
+    "llms.txt"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "keywords": [
+    "crayon",
+    "crayon-export",
+    "crayon-alternative",
+    "competitive-intelligence",
+    "battlecards",
+    "win-loss",
+    "export",
+    "migration",
+    "mcp",
+    "claude-skill"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calven-ai/calven-migrate-from-crayon.git"
+  }
+}
