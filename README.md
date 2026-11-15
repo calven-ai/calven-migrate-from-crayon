@@ -155,6 +155,15 @@ The [migrate-from-crayon skill](skills/migrate-from-crayon/SKILL.md) packages th
 
 Tested end to end against a simulated Crayon server across answer shapes, tool names, competitor discovery paths and Insights API paging styles. The sign-in metadata matches what Crayon's live servers publish (checked 14 October 2026). It has not yet been run on a real Crayon workspace, and Crayon has not published its MCP tool schemas, so tool and argument names are discovered at runtime. If you run it, an issue with your `manifest.json` (counts, no content) or `crayon-tools.json` helps.
 
+## More from Calven
+
+- [calven-mcp](https://github.com/calven-ai/calven-mcp): your approved GTM context in Claude, ChatGPT, Codex, Cursor and Copilot, through a remote MCP server.
+- [marketing-as-code](https://github.com/calven-ai/marketing-as-code): a template repo that keeps strategy, messaging and briefs as plain text for agents to read and write.
+- [demoverse](https://github.com/calven-ai/demoverse): synthetic B2B sales data: a fictional company's history in Salesforce, HubSpot, Google Drive and Slack.
+- [calven-migrate-from-klue](https://github.com/calven-ai/calven-migrate-from-klue): export your Klue cards and battlecards to Markdown and JSON on your machine.
+
+All projects: [github.com/calven-ai](https://github.com/calven-ai)
+
 ## License
 
 [MIT](LICENSE). Report security issues as described in [SECURITY.md](SECURITY.md).
